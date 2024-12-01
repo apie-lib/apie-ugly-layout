@@ -15,6 +15,8 @@ export namespace Components {
         "validationErrors": NestedRecord<string>;
         "value": NestedRecord<SubmitField>;
     }
+    interface ApieUglyTest {
+    }
 }
 declare global {
     interface HTMLApieUglyFormElement extends Components.ApieUglyForm, HTMLStencilElement {
@@ -23,8 +25,15 @@ declare global {
         prototype: HTMLApieUglyFormElement;
         new (): HTMLApieUglyFormElement;
     };
+    interface HTMLApieUglyTestElement extends Components.ApieUglyTest, HTMLStencilElement {
+    }
+    var HTMLApieUglyTestElement: {
+        prototype: HTMLApieUglyTestElement;
+        new (): HTMLApieUglyTestElement;
+    };
     interface HTMLElementTagNameMap {
         "apie-ugly-form": HTMLApieUglyFormElement;
+        "apie-ugly-test": HTMLApieUglyTestElement;
     }
 }
 declare namespace LocalJSX {
@@ -35,8 +44,11 @@ declare namespace LocalJSX {
         "validationErrors"?: NestedRecord<string>;
         "value"?: NestedRecord<SubmitField>;
     }
+    interface ApieUglyTest {
+    }
     interface IntrinsicElements {
         "apie-ugly-form": ApieUglyForm;
+        "apie-ugly-test": ApieUglyTest;
     }
 }
 export { LocalJSX as JSX };
@@ -44,6 +56,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "apie-ugly-form": LocalJSX.ApieUglyForm & JSXBase.HTMLAttributes<HTMLApieUglyFormElement>;
+            "apie-ugly-test": LocalJSX.ApieUglyTest & JSXBase.HTMLAttributes<HTMLApieUglyTestElement>;
         }
     }
 }
